@@ -7,16 +7,17 @@ class HomePage < SitePrism::Page
   element :search_results, "div#search"
 end
 
-describe 'some test' do
+describe 'Google' do
   
   before(:each) do
     @page = HomePage.new
   end
   
-  it 'tests a request', :js => true do
+  it 'has search results', :js => true do
     @page.load
     @page.search_field.set 'Hello world'
     @page.search_button.click()
-    @page.search_results.should have_content('Hello world')
+    @page.wait_for_search_results
+    @page.should have_search_results
   end
 end
