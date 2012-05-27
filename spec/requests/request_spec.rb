@@ -6,13 +6,13 @@ module RimPrism
   end
 end
 
-class HomePage < RimPrism::Page
+class HomePage < SitePrism::Page
 
 end
 
 describe 'some test' do
   it 'tests a request', :js => true do
-    visit('http://google.com.au')
-    # @page = HomePage.new
+    # visit('http://google.com.au')
+    @page = HomePage.new
   end
 end

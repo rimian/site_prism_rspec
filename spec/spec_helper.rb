@@ -4,7 +4,6 @@ require 'rspec/rails'
 require 'rspec/autorun'
 
 require 'capybara'
-# require 'site_prism'
 
 
 # Requires supporting ruby files with custom matchers and macros, etc,

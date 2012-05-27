@@ -7,8 +7,8 @@ gem 'sqlite3'
 group :development, :test do
   gem 'rspec',                '~> 2.9.0'
   gem 'rspec-rails',          '~> 2.9.0'
-  gem 'capybara', '~> 1.1.2'
-  # gem 'site_prism'
+  gem 'capybara',             '~> 1.1.2', :require => 'capybara/dsl'
+  gem 'site_prism'
   gem 'launchy'
   gem 'database_cleaner'
 end
