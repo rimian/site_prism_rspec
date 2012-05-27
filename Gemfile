@@ -5,8 +5,10 @@ gem 'rails', '3.2.1'
 gem 'sqlite3'
 
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'capybara', :git => 'git://github.com/rimian/capybara.git', :branch => 'host_port'
+  gem 'rspec',                '~> 2.9.0'
+  gem 'rspec-rails',          '~> 2.9.0'
+  gem 'capybara', '~> 1.1.2'
+  # gem 'site_prism'
   gem 'launchy'
   gem 'database_cleaner'
 end
