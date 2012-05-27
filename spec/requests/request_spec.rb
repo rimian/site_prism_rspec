@@ -1,18 +1,22 @@
 require 'spec_helper'
 
-module RimPrism
-  class Page
-    include Capybara::DSL
-  end
-end
-
 class HomePage < SitePrism::Page
-
+  set_url "http://www.google.com"
+  element :search_field, "input[name='q']"
+  element :search_button, "button[name='btnG']"
+  element :search_results, "div#search"
 end
 
 describe 'some test' do
-  it 'tests a request', :js => true do
-    # visit('http://google.com.au')
+  
+  before(:each) do
     @page = HomePage.new
+  end
+  
+  it 'tests a request', :js => true do
+    @page.load
+    @page.search_field.set 'Hello world'
+    @page.search_button.click()
+    @page.search_results.should have_content('Hello world')
   end
 end
