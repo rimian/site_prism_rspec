@@ -11,12 +11,12 @@ describe 'Google' do
   
   before(:each) do
     @page = HomePage.new
+    @page.load
   end
   
   it 'has search results', :js => true do
-    @page.load
     @page.search_field.set 'Hello world'
-    @page.search_button.click()
+    @page.search_button.click
     @page.wait_for_search_results
     @page.should have_search_results
   end
